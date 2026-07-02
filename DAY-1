@@ -1,9 +1,54 @@
-Write a module that takes 2 inputs a, b and outputs their AND. One line using assign.using verilog.
+1.Write a module that takes 2 inputs a, b and outputs their AND gate One line using assign.
 
-module or_gate(
+module and_gate(
     input a,
     input b,
     output y
 );
   assign y = a||b;
+endmodule
+
+2.Write a module that takes 1 input a and outputs its NOT gate One line using assign.
+
+ module not_gate(
+   input a,
+   output y
+ );
+
+ assign y = ~a;
+endmodule
+
+3.rite a module that has 4 inputs and just connects input a directly to output y:
+
+  (i) using assign:                                                          
+   module wire(                      
+     input a,
+     input b, 
+     input c,
+     input d,
+     output y
+   );
+  assign y = a;
+endmodule 
+
+ (ii) using wire:
+  module wire(
+       input a,
+       input b,
+       output c
+);
+  wire connector;
+  assign c = a&b;
+  assign connector = c;
+endmodule
+
+
+4.Write a module with 3 inputs a, b, c and output y = (a AND b) OR c:
+  module mix(
+      input a,
+      input b,
+      input c,
+      output y
+);
+   assign y = (a&&b)||c;
 endmodule
